@@ -1,6 +1,6 @@
 import {
     createStore as reduxCreateStore,
-    combineReducers,
+    combineReducers
 } from 'redux';
 
 import {UsersReducer} from "../users/reducers";
@@ -8,7 +8,7 @@ import {UsersReducer} from "../users/reducers";
 export default function createStore() {
     return reduxCreateStore(
         combineReducers({
-            users: UsersReducer//combineReducersのkeyはstateのカテゴリ毎に指定している
+            users: UsersReducer
         })
     )
 }
