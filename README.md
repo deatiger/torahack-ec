@@ -66,3 +66,15 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+        /**
+         * Switchコンポーネントの中でexact属性を指定すると
+         * パスが完全一致した場合に指定したコンポーネントを表示するという動きになる。
+         * exact属性がない場合部分一致でもコンポーネントを表示するという動きとなる。
+         * 部分一致の使い所としては
+         * <Router path="/posts/:id" component={Post} />
+         * のような形でブログの記事など動的なURLで使う。
+         * この時idの部分は「何が入ってきても良いですよ」という意味になる。
+         * (/)
+         */
