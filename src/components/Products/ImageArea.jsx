@@ -3,7 +3,7 @@ import IconButton from "@material-ui/core/IconButton"
 import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate';
 import {makeStyles} from "@material-ui/styles";
 import {storage} from '../../firebase/index'
-import ImagePreview from './ImagePreview'
+import {ImagePreview} from './index'
 
 const useStyles = makeStyles({
     icon: {
@@ -24,7 +24,7 @@ const ImageArea = (props) => {
             props.setImages(newImages);
             return storage.ref('images').child(id).delete()
         }
-    }, [props.images])
+    }, [props])
 
     const uploadImage = useCallback((event) => {
         //dispatchEvent(showLoadingAction("uploading..."))
@@ -46,7 +46,7 @@ const ImageArea = (props) => {
                 props.setImages((prevState => [...prevState, newImage]))
             });
         })
-    }, [props.setImages])
+    }, [props])
 
     return(
         <div>

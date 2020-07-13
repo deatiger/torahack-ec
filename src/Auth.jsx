@@ -12,7 +12,7 @@ const Auth = ({children}) => {
         if (!isSignedIn) {
             dispatch(listenAuthState())
         }
-    }, []);
+    }, [dispatch, isSignedIn]);
 
     if (!isSignedIn) {
         return <></>
